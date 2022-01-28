@@ -21,6 +21,9 @@ function Nav() {
 				src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
 				alt="Netflix Logo"
 			/>
+			<h2 className={`programmer ${show && "programmer_hide "}`}>
+				Yakubu Ahmed Elrufai
+			</h2>
 			<img className="nav_avatar" src={logo} alt="User profile" />
 		</div>
 	);
