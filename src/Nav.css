@@ -43,5 +43,7 @@
 }
 
 .programmer_hide{
-    visibility: visible
+    visibility: visible;
+    transition-timing-function: ease-in-out;
+    transition: all 0.5s;
 }
