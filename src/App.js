@@ -1,6 +1,6 @@
 import "./App.css";
 import Row from "./Row";
-import request from "./Request";
+import request from "./Api_calls";
 import Banner from "./Banner";
 import Nav from "./Nav";
 function App() {
