@@ -1,13 +1,18 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 .row {
 	margin-left: 20px;
-	color: white
+	color: white;
 }
 
 .row_posters {
 	display: flex;
 	overflow-y: hidden;
 	overflow-x: scroll;
-	
 }
 
 .row_posters::-webkit-scrollbar {
@@ -24,11 +29,26 @@
 	transform: scale(1.08);
 }
 
-.row_posterLarge{
+.row_posterLarge {
 	max-height: 250px;
 }
 
-.row_posterLarge:hover{
+.row_posterLarge:hover {
 	transform: scale(1.09);
 	opacity: 1;
+}
+
+@media screen and (max-width: 400px) {
+	.title {
+		font-size: small;
+	}
+	.row {
+		margin-left: 0;
+	}
+	.row_poster {
+		margin-right: 5px;
+	}
+	.row_posters {
+		margin-left: 2px;
+	}
 }
