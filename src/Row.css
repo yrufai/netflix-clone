@@ -39,7 +39,7 @@
 	opacity: 1;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
 	.title {
 		font-size: small;
 	}
