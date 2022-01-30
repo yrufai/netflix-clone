@@ -57,11 +57,12 @@
 		display: none;
 	}
 	.nav_logo {
-		padding-left: 5px;
-		padding-bottom: 18px;
+		display: flex;
 	}
 
 	.nav_avatar {
 		margin-right: 8px;
+		display: flex;
+		justify-content: flex-end;
 	}
 }
