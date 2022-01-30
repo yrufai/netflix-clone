@@ -42,19 +42,16 @@ function Row({ title, fetchUrl, isLargeRow }) {
 	const handleClick = (movie) => {
 		console.log(movie?.target.alt);
 
-		if (trailerUrl) {
-			setTrailerUrl("");
-		} else {
-			movieTrailer(movie?.target.alt, { id: true })
-				.then((url) => {
-					//const urlParams = new URLSearchParams(new URL(url).search);
-					//setTrailerUrl(urlParams.get("v").toString());
-					setTrailerUrl(url);
-					console.log(trailerUrl);
-				})
-				.catch((err) => console.log(err));
-		}
+		movieTrailer(movie?.target.alt, { id: true })
+			.then((url) => {
+				//const urlParams = new URLSearchParams(new URL(url).search);
+				//setTrailerUrl(urlParams.get("v").toString());
+				setTrailerUrl(url);
+				console.log(trailerUrl);
+			})
+			.catch((err) => console.log(err));
 	};
+
 	return (
 		<div className="row">
 			<h2>{title}</h2>
