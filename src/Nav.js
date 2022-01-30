@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
-import logo from "./passport.jpg";
+import logo from "./elrufai.png";
 
 function Nav() {
 	const [show, setShow] = useState(false);
