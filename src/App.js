@@ -1,29 +1,51 @@
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { getAuth } from "firebase/auth";
+import app from "./firebase";
+
 import "./App.css";
-import Row from "./Row";
-import request from "./Api_calls";
-import Banner from "./Banner";
-import Nav from "./Nav";
+import HomeScreen from "./screens/HomeScreen";
+import LoginScreen from "./screens/WelcomeScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import SignupScreen from "./screens/SignupScreen";
+import WelcomeScreen from "./screens/WelcomeScreen";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout, selectUser } from "./userSlice";
+
 function App() {
+	const auth = getAuth(app);
+	const user = useSelector(selectUser);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+			if (userAuth) {
+				dispatch(
+					login({
+						uid: userAuth.uid,
+						email: userAuth.email,
+					})
+				);
+			} else {
+				dispatch(logout());
+			}
+		});
+		return unsubscribe;
+	}, [dispatch]);
 	return (
 		<div className="App">
-			<Nav />
-			<Banner />
-			<Row
-				title="NETFLIX ORIGINALS"
-				fetchUrl={request.fetchNetflixOriginals}
-				isLargeRow={true}
-			/>
-			<Row title="Trending Now" fetchUrl={request.fetchTrending} />
-			<Row title="Top Rated" fetchUrl={request.fetchTopRated} />
-			<Row title="Action Movies" fetchUrl={request.fetchActionMovies} />
-			<Row title="Comedy" fetchUrl={request.fetchComedyMovies} />
-			<Row title="Horror Movies" fetchUrl={request.fetchHororMovies} />
-			<Row title="Animation" fetchUrl={request.fetchAnimation} />
-			<Row title="crime movies" fetchUrl={request.fetchCrime} />
-			<Row title="war" fetchUrl={request.fetchWar} />
-			<Row title="History" fetchUrl={request.fetchHistory} />
-			<Row title="Romance" fetchUrl={request.fetchRomanceMovies} />
-			<Row title="Documentaries" fetchUrl={request.fetchDocumentaries} />
+			<Router>
+				{!user ? (
+					<WelcomeScreen />
+				) : (
+					<Routes>
+						<Route exact path="/" element={<HomeScreen />} />
+						<Route exact path="/login" element={<LoginScreen />} />
+						<Route exact path="/profile" element={<ProfileScreen />} />
+						<Route exact path="/signup" element={<SignupScreen />} />
+					</Routes>
+				)}
+			</Router>
 		</div>
 	);
 }

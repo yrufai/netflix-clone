@@ -68,7 +68,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 				{movies.map((movie) => (
 					//console.log(movie),
 					<img
-						style={{ borderRadius: 10 }}
+						style={{ borderRadius: 10, cursor: "pointer" }}
 						onClick={(movie) => {
 							openModal();
 							handleClick(movie);
