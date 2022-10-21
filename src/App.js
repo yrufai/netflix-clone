@@ -9,6 +9,7 @@ import LoginScreen from "./screens/WelcomeScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import SignupScreen from "./screens/SignupScreen";
 import WelcomeScreen from "./screens/WelcomeScreen";
+import Subscribe from "./screens/Subscribe";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./userSlice";
 
@@ -44,6 +45,7 @@ function App() {
 						<Route exact path="/profile" element={<ProfileScreen />} />
 						<Route exact path="/signup" element={<SignupScreen />} />
 						<Route exact path="/welcome" element={<WelcomeScreen />} />
+						<Route exact path="/subscribe" element={<Subscribe />} />
 					</Routes>
 				)}
 			</Router>

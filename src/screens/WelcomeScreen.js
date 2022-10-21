@@ -14,10 +14,10 @@ function WelcomeScreen() {
 
 	const navigate = useNavigate();
 	if (gotoSignup == true) {
-		return <Navigate to={"/signup"} />;
+		return <Navigate to={"/subscribe"} />;
 	}
 	const register = () => {
-		navigate("/");
+		navigate("/subscribe");
 	};
 	const goHome = () => {
 		navigate("/welcome");
