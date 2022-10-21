@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./subscribe.css";
+import "./Subscribe.css";
 
 function Subscribe() {
 	const navigate = useNavigate();
