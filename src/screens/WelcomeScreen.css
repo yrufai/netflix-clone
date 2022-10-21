@@ -1,56 +1,80 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
 .welcomeScreen {
 	position: relative;
-	height: 100%;
-	background: url("../hulu.jpg") center no-repeat;
+	height: 100vh;
+	background: url("../tubi.jpg") center no-repeat;
 	background-size: cover;
 }
-.welcomeScreen_logo {
-	position: fixed;
-	left: 10;
-	width: 170px;
-	object-fit: contain;
-	padding-left: 29px;
-	color: rgb(42, 129, 100);
-	margin-top: 20px;
+.navs {
+	margin-top: 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px;
 }
-
-.welcomeScreen_button {
-	position: fixed;
-	right: 20px;
-	top: 20px;
-	padding: 10px 20px;
-	color: white;
-	background-color: rgb(41, 116, 74);
-	cursor: pointer;
-}
-.welcomeScreen_gradient {
-	width: 100%;
-	height: 100vh;
-	z-index: 1;
+.welcomeScreen_background {
 	background: rgba(0, 0, 0, 0.4);
-	background-image: linear-gradient(
+	background: linear-gradient(
 		to top,
 		rgba(0, 0, 0, 0.8) 0,
 		rgba(0, 0, 0, 0) 60%,
 		rgba(0, 0, 0, 0.8) 100%
 	);
 }
+.welcomeScreen_logo {
+	position: relative;
+	left: 10;
+	width: 170px;
+	object-fit: contain;
+	padding-left: 29px;
+	color: #2cc7bc;
+	margin-top: 20px;
+	font-family: "Lobster", cursive;
+	cursor: pointer;
+}
+.buttons {
+	width: 200px;
+	display: flex;
+	justify-content: space-around;
+	height: 50px;
+}
+
+.welc_button_1 {
+	position: relative;
+	right: 20px;
+	top: 20px;
+	padding: 10px 20px;
+	color: white;
+	background-color: #2cc7bc;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.welc_button_2 {
+	position: relative;
+	right: 20px;
+	top: 20px;
+	padding: 10px 20px;
+	color: white;
+	background-color: #2cc7bc;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.welcomeScreen_gradient {
+	width: 100%;
+	height: 100vh;
+}
 .welcomeScreen_body > h1 {
-	font-size: 3.15rem;
+	font-size: 4rem;
 	margin-bottom: 20px;
 }
 .welcomeScreen_body > h2 {
-	font-size: 2rem;
+	font-size: 3rem;
 	font-weight: 400;
 	margin-bottom: 30px;
 }
 .welcomeScreen_body > h3 {
-	font-size: 1.3rem;
+	font-size: 2rem;
 	font-weight: 400;
 }
 .welcomeScreen_body {
@@ -80,11 +104,18 @@
 	padding: 16px 20px;
 	font-size: 1rem;
 	color: rgb(248, 252, 250);
-	background-color: rgb(62, 194, 117);
+	background-color: #2cc7bc;
 	font-weight: 600;
 	cursor: pointer;
 	height: 55px;
 	margin-top: 45px;
 	border: none;
 	border-radius: 0, 0, 10px, 10px;
+}
+
+.title {
+	font-size: 48px;
+	font-weight: 700;
+	line-height: 56px;
+	letter-spacing: 0.3px;
 }

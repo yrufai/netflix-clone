@@ -2,24 +2,41 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Nav from "../Nav";
 import { selectUser } from "../userSlice";
-import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { getAuth, signOut } from "firebase/auth";
 import app from "../firebase";
 import "./ProfileScreen.css";
-
+import image from "../elrufai.png";
 function ProfileScreen() {
 	const auth = getAuth(app);
 	const user = useSelector(selectUser);
+	const navigate = useNavigate();
+
+	const signout = () => {
+		signOut(auth)
+			.then(() => {
+				navigate("/welcome");
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 	return (
 		<div className="profile">
 			<Nav />
 			<div className="profile_body">
-				<div className="first">
-					<img
-						className="
-					image"
-						src="https://images.app.goo.gl/s9KEDFw8EZhEhDDo8"
-					></img>
-					<div className="email">{user.email} </div>
+				<div className="profile_detail">
+					<div className="profiles">
+						<img className="image" src={image} />
+						<div className="email">{user.email} </div>
+					</div>
+					<div className="profiles">
+						<img className="image" src={image} />
+						<div className="email">{user.email} </div>
+					</div>
+				</div>
+				<div className="signOut" onClick={signout}>
+					Sign Out
 				</div>
 			</div>
 		</div>

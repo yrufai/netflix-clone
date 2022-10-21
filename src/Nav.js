@@ -1,32 +1,31 @@
 import React, { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, Link } from "react-router-dom";
 import "./Nav.css";
 import logo from "./elrufai.png";
 
 function Nav() {
 	const [show, setShow] = useState(false);
+	const [gotoProfile, setGotoProfile] = useState(false);
 	const navigate = useNavigate();
-
-	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			if (window.scrollY > 100) {
-				setShow(true);
-			} else setShow(false);
-		});
-		return () => {
-			window.removeEventListener("scroll");
-		};
-	}, []);
+	if (gotoProfile == true) {
+		return <Navigate to={"/profile"} />;
+	}
 	return (
 		<div className={`nav ${show && "nav_black"}`}>
-			<img
-				className="nav_logo"
-				src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-				alt="Netflix Logo"
-			/>
+			<div className="left">
+				<h1 onClick={() => navigate("/")} className="nav_logo">
+					CHALE
+				</h1>
+				<div className="links_group">
+					<Link className="links">series</Link>
+					<Link className="links">comedy</Link>
+					<Link className="links">Drama</Link>
+					<Link className="links">Horor</Link>
+				</div>
+			</div>
 
 			<img
-				onClick={() => navigate("/profile")}
+				onClick={() => setGotoProfile(true)}
 				className="nav_avatar"
 				src={logo}
 				alt="User profile"

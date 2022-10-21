@@ -1,23 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap");
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
 .nav {
 	display: flex;
 	position: fixed;
 	width: 100%;
 	height: 10vh;
 	top: 0px;
+	flex-direction: row;
 	justify-content: space-between;
 	z-index: 1;
 	padding-top: 20px;
 	transition-timing-function: ease-in-out;
 	transition: all 0.6s;
 	overflow: hidden;
+}
+
+.left {
+	display: flex;
+	flex-direction: row;
+	width: 40%;
+	justify-content: space-between;
+}
+.links {
+	color: #ffffff;
+	font-family: "Lobster", cursive;
+	font-size: 1.5rem;
+}
+.links_group {
+	display: flex;
+	flex-direction: row;
+	width: 500px;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 
 .nav_black {
@@ -30,13 +44,18 @@
 	padding-bottom: 30px;
 	width: auto;
 	height: auto;
+	color: #2cc7bc;
+	font-family: "Lobster", cursive;
+	cursor: pointer;
 }
 
-.nav_avatar {
+nav > .nav_avatar {
 	margin-right: 20px;
 	object-fit: contain;
 	border-radius: 20%;
 	padding-bottom: 5px;
+	cursor: pointer;
+	margin-right: 10px;
 }
 
 .programmer {

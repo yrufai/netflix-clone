@@ -1,20 +1,22 @@
 import React, { useRef, useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import app from "../firebase";
 import "./LoginScreen.css";
-import { render } from "@testing-library/react";
+
 import SignupScreen from "./SignupScreen";
 
 function LoginScreen() {
 	const auth = getAuth(app);
 	//const emailRef = useRef(null);
 	//const passwordRef = useRef(null);
+	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
-	const register = (e) => {
+	const signup = (e) => {
 		e.preventDefault();
-		render(<SignupScreen />);
+		navigate("/signup");
 	};
 
 	const login = (e) => {
@@ -29,25 +31,35 @@ function LoginScreen() {
 	return (
 		<div className="loginScreen">
 			<form>
-				<h1>Sign In</h1>
+				<h1 className="signin">Sign In</h1>
+				<label className="label" htmlFor="Email">
+					Email
+				</label>
 				<input
 					type="email"
 					placeholder="Email"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
+				<label className="label" htmlFor="password">
+					Password
+				</label>
+
 				<input
 					type="password"
 					placeholder="Password"
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
 				/>
-				<button type="submit" onClick={login}>
+				<button className="button" type="submit" onClick={login}>
 					Sign In
 				</button>
-				<h4>
-					<span className="signup_gray"> New to UCB?</span>
-					<span className="signup_link" onClick={register}>
+				<h4 className="h4">
+					<span className="signup_gray">
+						{" "}
+						To create an account click sign Up
+					</span>
+					<span className="signup_link" onClick={signup}>
 						Sign Up now
 					</span>
 				</h4>

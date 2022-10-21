@@ -1,3 +1,92 @@
 .signupScreen {
-	background: rgb(197, 190, 190);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	background: rgb(19, 20, 20);
+	height: 100vh;
+	width: 100vw;
+}
+.signupScreen_background {
+	width: 100%;
+	margin: 20px;
+	margin-bottom: 150px;
+}
+.navs {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px;
+}
+.signup_logo {
+	position: relative;
+	left: 10;
+	width: 170px;
+	object-fit: contain;
+	padding-left: 29px;
+	color: #2cc7bc;
+	font-family: "Lobster", cursive;
+	cursor: pointer;
+}
+.buttons {
+	width: 200px;
+	display: flex;
+	justify-content: space-around;
+	height: 50px;
+}
+.signup_button_1 {
+	width: 40%;
+	border-radius: 5px;
+	background: #2cc7bc;
+}
+.signup_button_2 {
+	width: 40%;
+	border-radius: 5px;
+	background: #2cc7bc;
+}
+.signupScreen form > input {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	width: 20vw;
+	height: 60px;
+	padding-left: 20px;
+}
+
+.label_name {
+	margin-left: 20px;
+	font-weight: bold;
+	color: #195f47;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(219, 219, 219);
+	width: 25vw;
+	height: 60vh;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+}
+.button {
+	font-size: 1rem;
+	font-weight: 600;
+	width: 20vw;
+	align-items: center;
+	height: 50px;
+	border-radius: 5px;
+	background-color: #195f47;
+	color: white;
+}
+.button:hover {
+	cursor: pointer;
+}
+.create {
+	display: flex;
+	justify-content: center;
+	color: #195f47;
+	align-items: center;
 }

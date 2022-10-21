@@ -43,6 +43,7 @@ function App() {
 						<Route exact path="/login" element={<LoginScreen />} />
 						<Route exact path="/profile" element={<ProfileScreen />} />
 						<Route exact path="/signup" element={<SignupScreen />} />
+						<Route exact path="/welcome" element={<WelcomeScreen />} />
 					</Routes>
 				)}
 			</Router>

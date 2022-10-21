@@ -1,7 +1,7 @@
 .profile {
 	height: 100vh;
 	color: white;
-	background: rgb(90, 143, 143);
+	background: rgb(13, 14, 14);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -9,36 +9,35 @@
 }
 .profile_body {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	width: 50%;
 	height: 50%;
-	top: 50px;
-	background: rgb(173, 173, 119);
-
-	padding-top: 8%;
-	max-width: 800px;
 }
 
-.profile_info {
-	display: flex;
-}
-.profile_body > h1 {
-	font-size: 60px;
-	font-weight: 400;
-	border-bottom: 1px solid rgb(110, 24, 154);
-	margin-bottom: 20px;
-}
-
-.first > img {
-	width: 190px;
+.profiles > img {
+	width: 250px;
 	height: 250px;
-	margin-left: 40px;
+	border-radius: 10px;
+	margin-bottom: 10px;
 }
-.profile_details > h2 {
-	background-color: gray;
-	padding: 15rem;
-	font-size: 15px;
-	padding-left: 20px;
+.profiles > .email {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: large;
 }
+.profile_detail {
+	display: flex;
+	flex-direction: row;
+}
+.profiles {
+	display: flex;
+	flex-direction: column;
+	margin: 10px;
+}
+
 .profile_signOut {
 	padding: 10px 20px;
 	font-size: 1rem;
@@ -48,8 +47,7 @@
 	background-color: rgb(203, 104, 47);
 }
 
-.profile_details {
-	color: white;
-	margin-left: 25px;
-	flex: 1;
+.signOut {
+	cursor: pointer;
+	font-size: x-large;
 }
