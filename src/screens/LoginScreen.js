@@ -16,7 +16,7 @@ function LoginScreen() {
 
 	const signup = (e) => {
 		e.preventDefault();
-		navigate("/signup");
+		navigate("/subscribe");
 	};
 
 	const login = (e) => {
