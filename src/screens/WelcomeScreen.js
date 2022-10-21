@@ -15,7 +15,11 @@ function WelcomeScreen() {
 		navigate("/signup");
 	};
 	const goHome = () => {
-		navigate("/welcome");
+		if (user) {
+			navigate("/");
+		} else {
+			navigate("/welcome");
+		}
 	};
 	return (
 		<div className="welcomeScreen">
