@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import LoginScreen from "./LoginScreen";
 import { useSelector } from "react-redux";
 import { selectUser } from "../userSlice";
@@ -10,16 +10,17 @@ import "./WelcomeScreen.css";
 function WelcomeScreen() {
 	const [toSignIn, setSignIn] = useState(false);
 	const user = useSelector(selectUser);
+	const [gotoSignup, setgotoSignup] = useState(false);
+
 	const navigate = useNavigate();
+	if (gotoSignup == true) {
+		return <Navigate to={"/signup"} />;
+	}
 	const register = () => {
-		navigate("/signup");
+		navigate("/");
 	};
 	const goHome = () => {
-		if (user) {
-			navigate("/");
-		} else {
-			navigate("/welcome");
-		}
+		navigate("/welcome");
 	};
 	return (
 		<div className="welcomeScreen">
@@ -32,7 +33,10 @@ function WelcomeScreen() {
 						<button className="welc_button_1" onClick={() => setSignIn(true)}>
 							Sign In
 						</button>
-						<button className="welc_button_2" onClick={register}>
+						<button
+							className="welc_button_2"
+							onClick={() => setgotoSignup(true)}
+						>
 							Register
 						</button>
 					</div>

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../firebase";
 import "./ProfileScreen.css";
-import image from "../elrufai.png";
+import image from "../user.png";
 function ProfileScreen() {
 	const auth = getAuth(app);
 	const user = useSelector(selectUser);
@@ -25,6 +25,7 @@ function ProfileScreen() {
 		<div className="profile">
 			<Nav />
 			<div className="profile_body">
+				<h1 className="w">who's watching</h1>
 				<div className="profile_detail">
 					<div className="profiles">
 						<img className="image" src={image} />
