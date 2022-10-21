@@ -26,6 +26,8 @@ function SignupScreen() {
 		createUserWithEmailAndPassword(auth, email, password)
 			.then((authUser) => {
 				// Signed in
+				console.log(authUser);
+				navigate("/");
 			})
 			.catch((error) => {
 				const errorCode = error.code;
@@ -53,7 +55,7 @@ function SignupScreen() {
 				<div className="signup_gradient"></div>
 			</div>
 			<div className="card">
-				<form onSubmit={signup}>
+				<form>
 					<h1 className="create">Create an Account</h1>
 					<label className="label_name" htmlFor="firstName">
 						First Name
