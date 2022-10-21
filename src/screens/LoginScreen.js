@@ -24,6 +24,7 @@ function LoginScreen() {
 		signInWithEmailAndPassword(auth, email, password)
 			.then((authUser) => {
 				console.log(authUser);
+				navigate("/");
 			})
 			.catch((error) => alert(error.message));
 	};
